@@ -6,10 +6,17 @@ angular.module('myApp', [
   'mobile-angular-ui',
   'myApp.view1',
   'myApp.view2',
+  'myApp.login',
+  'myApp.signup',
+  'myApp.anims',
+  'myApp.anim',
   'myApp.version'
 ]).
+controller('MainCtrl', ['$scope','$rootScope',function($scope, $rootScope) {
+  $scope.authenticated = true;
+}]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/login'});
 }]);

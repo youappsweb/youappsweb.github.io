@@ -20,30 +20,27 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body ng-controller="MainCtrl">
   <!-- Sidebars -->
   <div class="sidebar sidebar-left">
     <div class="scrollable">
-      <img src="img/logo_funcom.png"/>
-      <h1 class="scrollable-header app-name">FunComm</h1>
+      <div style="text-align:center"><img src="img/logo_funcom.png"/>
+      <h1 class="scrollable-header app-name">FunComm</h1></div>
+      <br/>
       <div class="scrollable-content">
-        <!--<div class="list-group" ui-turn-off='uiSidebarLeft' ng-show="!authenticated">
-          <a class="list-group-item" href="#!/view1">Sign Up
+        <div class="list-group" ui-turn-off='uiSidebarLeft' ng-show="!authenticated">
+          <a class="list-group-item" href="#!/signup">Sign Up
             <i class="fa fa-chevron-right pull-right"></i></a>
-          <a class="list-group-item" href="#!/view2">Login
-            <i class="fa fa-chevron-right pull-right"></i></a>
-        </div>-->
-        <div class="list-group" ui-turn-off='uiSidebarLeft'>
-          <a class="list-group-item" href="#!/view1">Choose Anim
-            <i class="fa fa-chevron-right pull-right"></i></a>
-          <a class="list-group-item" href="#!/view2">You Got Anim
-            <i class="fa fa-chevron-right pull-right"></i></a>
-          <a class="list-group-item" href="#!/view2">Sent
-            <i class="fa fa-chevron-right pull-right"></i></a>
-          <a class="list-group-item" href="#!/view2">Received
+          <a class="list-group-item" href="#!/login">Login
             <i class="fa fa-chevron-right pull-right"></i></a>
         </div>
-        <button class="btn btn-primary btn-block">Log Out</button>
+        <div class="list-group" ui-turn-off='uiSidebarLeft' ng-show="authenticated">
+          <a class="list-group-item" href="#!/anims">Choose Anim
+            <i class="fa fa-chevron-right pull-right"></i></a>
+          <a class="list-group-item" href="#!/anim/12">Send/Receive Anim
+            <i class="fa fa-chevron-right pull-right"></i></a>
+        </div>
+        <button class="btn btn-primary btn-block" ng-show="authenticated">Log Out</button>
       </div>
     </div>
   </div>
@@ -59,7 +56,9 @@
           </div>
         </div>
     </div>
-    <div class="navbar navbar-app navbar-absolute-bottom"><!-- Bottom Navbar --></div>
+    <div class="navbar navbar-app navbar-absolute-bottom" style="text-align:center">
+      &copy;2017 YouApps
+    </div>
 
     <!-- App body -->
 
@@ -79,6 +78,10 @@
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="login/login.js"></script>
+  <script src="signup/signup.js"></script>
+  <script src="anims/anims.js"></script>
+  <script src="anim/anim.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
